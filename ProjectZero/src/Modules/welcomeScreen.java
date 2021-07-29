@@ -1,25 +1,21 @@
 package Modules;
 import java.util.Scanner;
+import java.io.*;
+
 
 public class welcomeScreen
 {
-    public void display()
+    public void display() throws Exception
     {
-        System.out.println("============================================");
-        System.out.println("Welcome to your Bank!");
-        System.out.println("Please Select from the following options below: ");
+        File file = new File("C:\\Users\\wrupp\\Desktop\\temp\\Bill_Ruppert_P0\\ProjectZero\\src\\Util\\welcomeScreen.txt");
+        BufferedReader br = new BufferedReader(new FileReader(file));
+
+        String st;
+        while ((st = br.readLine()) != null)
+            System.out.println(st);
     }
-
-//    Scanner input = new Scanner();
-//    while(true)
-//    {
-//        switch()
-//        {
-//
-//
-//
-//        }
-//    }
-
-
 }
+
+
+
+
