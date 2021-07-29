@@ -4,7 +4,8 @@ public class Driver
 {
     public static void main(String args[])
     {
-        System.out.println("HERE");
+        welcomeScreen w1 = new welcomeScreen();
+        w1.display();
 
     }
 
