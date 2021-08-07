@@ -24,6 +24,7 @@ public class WelcomeScreen
                 // Call the User Class to check credentials
                 break;
             case "2":
+                // Call the User Class to initiate newUser information input
                 break;
             case "0":
                 System.out.println("Exiting the Program. Goodbye.");
