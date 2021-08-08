@@ -3,9 +3,8 @@ package com.revature.repo;
 import com.revature.Util.ConnectionFactory;
 import com.revature.services.account;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DataDaoImpl implements DataDAO{
@@ -30,7 +29,32 @@ public class DataDaoImpl implements DataDAO{
 
     @Override
     public List<account> selectAllData() {
-        return null;
+        List<account> customersList = new ArrayList<>();
+
+            try {
+                Connection connection = ConnectionFactory.getConnection();
+                customersList = new ArrayList<>();
+                String sql = "select * from account";
+                Statement s = connection.createStatement();
+                ResultSet rs = s.executeQuery(sql);
+                while (rs.next()) {
+                    customersList.add(
+                            new account(
+                                    rs.getString(1),
+                                    rs.getString(2)
+                            )
+                    );
+                }
+                System.out.println(customersList);
+
+            }
+            catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+
+
+
+        return customersList;
     }
 
     @Override

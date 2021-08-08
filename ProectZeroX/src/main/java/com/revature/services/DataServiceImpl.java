@@ -14,6 +14,11 @@ public class DataServiceImpl implements DataService{
 
     private DataDAO myDAO;
 
+    public DataServiceImpl(DataDAO myDAO) {
+        super();
+        this.myDAO = myDAO;
+    }
+
     @Override
     public List<account> getAccount() {
         // TODO Auto-generated method stub
