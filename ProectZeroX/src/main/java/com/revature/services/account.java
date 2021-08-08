@@ -9,6 +9,10 @@ import java.sql.Connection;
 
 public class account {
 
+    /**
+     * @param
+     * Variable Declarations
+     */
     private String eMail;
     private String passWord;
 
